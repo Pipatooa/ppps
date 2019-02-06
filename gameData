@@ -34,7 +34,7 @@
 		"gameDir": "",
 		"key": "",
 		"description": "",
-		"requirements": {}
+		"requirements": {},
 		"visibility": 2
 	},
 	{
@@ -42,7 +42,7 @@
 		"gameDir": "",
 		"key": "",
 		"description": "",
-		"requirements": {}
+		"requirements": {},
 		"visibility": 2
 	},
 	{
@@ -50,7 +50,7 @@
 		"gameDir": "",
 		"key": "",
 		"description": "",
-		"requirements": {}
+		"requirements": {},
 		"visibility": 2
 	},
 	{
@@ -58,7 +58,7 @@
 		"gameDir": "",
 		"key": "",
 		"description": "",
-		"requirements": {}
+		"requirements": {},
 		"visibility": 2
 	},
 	{
@@ -66,7 +66,7 @@
 		"gameDir": "",
 		"key": "",
 		"description": "",
-		"requirements": {}
+		"requirements": {},
 		"visibility": 2
 	},
 	{
@@ -74,7 +74,7 @@
 		"gameDir": "",
 		"key": "",
 		"description": "",
-		"requirements": {}
+		"requirements": {},
 		"visibility": 2
 	},
 	{
@@ -82,7 +82,7 @@
 		"gameDir": "",
 		"key": "",
 		"description": "",
-		"requirements": {}
+		"requirements": {},
 		"visibility": 2
 	},
 	{
@@ -90,7 +90,7 @@
 		"gameDir": "",
 		"key": "",
 		"description": "",
-		"requirements": {}
+		"requirements": {},
 		"visibility": 2
 	},
 	{
@@ -98,7 +98,7 @@
 		"gameDir": "",
 		"key": "",
 		"description": "",
-		"requirements": {}
+		"requirements": {},
 		"visibility": 2
 	},
 	{
@@ -106,7 +106,7 @@
 		"gameDir": "",
 		"key": "",
 		"description": "",
-		"requirements": {}
+		"requirements": {},
 		"visibility": 2
 	}
 ]
