@@ -27,6 +27,6 @@
 		"requirements": {
 			"screenSize": [120, 30]
 		},
-		"visibility": 2
+		"visibility": 1
 	}
 ]
