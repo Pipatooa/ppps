@@ -280,7 +280,7 @@ def checkFiles():
     filesRequired = json.loads(downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/index", True))
     filesFound = []
     
-    for root, dirs, files in os.walk(os.getcwd() + "\\imports"):
+    for root, dirs, files in os.walk(os.getcwd()):
         for name in files:
             filename = os.path.join(root, name)[len(os.getcwd()):]
         
@@ -307,7 +307,6 @@ def loadImports():
 
 def downloadFiles(files):
     currentProgressBar.update("Downloading Required Files...", "", 0)
-    
     
     for index, file in enumerate(files):
         currentProgressBar.update("Downloading Required Files... (" + str(index) + " of " + str(len(files)) + ")", "Downloading " + file, index / len(files))
