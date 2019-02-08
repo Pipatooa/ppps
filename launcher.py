@@ -308,9 +308,10 @@ def loadImports():
 def downloadFiles(files):
     currentProgressBar.update("Downloading Required Files...", "", 0)
     
+    
     for index, file in enumerate(files):
         currentProgressBar.update("Downloading Required Files... (" + str(index) + " of " + str(len(files)) + ")", "Downloading " + file, index / len(files))
-        response = downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/ppps" + file.replace("\\", "/"))
+        response = downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master" + file.replace("\\", "/"))
         
         if not os.path.exists(os.getcwd() + os.path.dirname(file)):
             os.makedirs(os.getcwd() + os.path.dirname(file))
@@ -619,7 +620,7 @@ def main():
     alphabet = [i for i in range(65, 91)] + [i for i in range(97, 123)]
     numbers = [i for i in range(48, 58)]
     
-    os.chdir(os.path.dirname(os.path.realpath(__file__)) + "ppps")
+    os.chdir(os.path.dirname(os.path.realpath(__file__)) + "\\ppps")
     sys.path.append(os.getcwd() + "\\imports")
     
     getVersion()
