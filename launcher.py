@@ -353,9 +353,9 @@ def downloadFromUrl(url, text = False):
 def updateLauncher():
     response = downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/updater.py")
     
-    open("updater.py", "wb").write(response.read())
+    open("updater.py", "wb").write(response)
     
-    os.system("start " + os.getcwd() + "\\ppps\\updater.py")
+    os.system("start " + os.getcwd() + "\\updater.py")
     
     exit()
 
