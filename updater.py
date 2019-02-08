@@ -1,4 +1,4 @@
-import os, urllib.request
+import json, os, urllib.request
 
 os.chdir(os.path.abspath(os.path.dirname(os.path.realpath(__file__)) + "\\.."))
 
@@ -8,8 +8,10 @@ response = urlOpener.open("https://raw.githubusercontent.com/Pipatooa/ppps/maste
 
 open("test.py", "wb").write(response.read())
 
-response = urlOpener.open("https://raw.githubusercontent.com/Pipatooa/ppps/master/ppps/version")
+response = urlOpener.open("https://raw.githubusercontent.com/Pipatooa/ppps/master/latestVersion")
 
-open(os.getcwd() + "\\ppps\\version", "wb").write(response.read())
+latestVersion = response.read().decode("utf-8").split("\n")[0]
+
+json.dump({"id": latestVersion, "type": "release"}, open(os.getcwd() + "\\ppps\\version", "w"))
 
 os.system("start test.py")

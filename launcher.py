@@ -234,11 +234,22 @@ def specialMerge(x, y):
     return z 
 
 def getVersion():
+    def parseVersion(version):
+        return [int(x) for x in re.sub(r'(\.0+)*$','', version).split(".")]
+    
+    def compareVersions(version1, version2):
+        return (parseVersion(version1) > parseVersion(version2)) - (parseVersion(version1) < parseVersion(version2))
+    
     global versionData
+    
+    latestVersion = downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/latestVersion", True)
     
     try:
         with open("version") as file:
             versionData = json.load(file)
+        
+        if compareVersions(versionData["id"], latestVersion) == -1 and versionData["type"] == "release":
+            updateLauncher()
     except:
         updateLauncher()
 
