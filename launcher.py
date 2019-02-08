@@ -249,7 +249,7 @@ def getVersion():
             versionData = json.load(file)
         
         if compareVersions(versionData["id"], latestVersion) == -1 and versionData["type"] == "release":
-            updateLauncher()
+            raise
     except:
         updateLauncher()
 
