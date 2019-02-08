@@ -240,16 +240,28 @@ def getVersion():
     def compareVersions(version1, version2):
         return (parseVersion(version1) > parseVersion(version2)) - (parseVersion(version1) < parseVersion(version2))
     
-    global versionData
+    global versionData, urlBasePath
     
-    latestVersion = downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/latestVersion", True)
+    urlBasePath = "https://raw.githubusercontent.com/Pipatooa/ppps/latestRelease/"
     
     try:
         with open("version") as file:
             versionData = json.load(file)
         
+        try:
+            latestVersion = downloadFromUrl(urlBasePath + "latestVersion", True)
+        except:
+            runErrorMenu("Launcher was unable to download data about the latest version.\n\n\n\nDETAILS:\n" + traceback.format_exec())
+            exit()
+        
         if compareVersions(versionData["id"], latestVersion) == -1 and versionData["type"] == "release":
-            raise
+            updateLauncher()
+        
+        if versionData["type"] == "experimental":
+            urlBasePath = "https://raw.githubusercontent.com/Pipatooa/ppps/master/"
+            
+    except SystemExit:
+        exit()
     except:
         updateLauncher()
 
@@ -260,17 +272,17 @@ def getData():
     
     try:
         currentProgressBar.update(None, "Downloading user data", None)
-        users = json.loads(downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/users", True))
+        users = json.loads(downloadFromUrl(urlBasePath + "users", True))
         
         currentProgressBar.update(None, "Downloading menu data", 1/4)
-        menuText = json.loads(downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/menuText", True))
+        menuText = json.loads(downloadFromUrl(urlBasePath + "menuText", True))
         
         currentProgressBar.update(None, "Downloading username data", 2/4)
-        response = downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/badWords", True)
+        response = downloadFromUrl(urlBasePath + "badWords", True)
         badWords = base64.b64decode(response).decode("ASCII").upper().split("\n")
         
         currentProgressBar.update(None, "Downloading game data", 3/4)
-        response = downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/gameData", True)
+        response = downloadFromUrl(urlBasePath + "gameData", True)
         gameData = []
         
         for game in json.loads(response):
@@ -288,7 +300,7 @@ def getData():
 def checkFiles():
     global requests, pyperclip
     
-    filesRequired = json.loads(downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/index", True))
+    filesRequired = json.loads(downloadFromUrl(urlBasePath + "index", True))
     filesFound = []
     
     for root, dirs, files in os.walk(os.getcwd()):
@@ -321,7 +333,7 @@ def downloadFiles(files):
     
     for index, file in enumerate(files):
         currentProgressBar.update("Downloading Required Files... (" + str(index) + " of " + str(len(files)) + ")", "Downloading " + file, index / len(files))
-        response = downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/ppps" + file.replace("\\", "/"))
+        response = downloadFromUrl(urlBasePath + "ppps" + file.replace("\\", "/"))
         
         if not os.path.exists(os.getcwd() + os.path.dirname(file)):
             os.makedirs(os.getcwd() + os.path.dirname(file))
@@ -362,7 +374,7 @@ def downloadFromUrl(url, text = False):
         return response.read()
 
 def updateLauncher():
-    response = downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/updater.py")
+    response = downloadFromUrl(urlBasePath + "updater.py")
     
     open("updater.py", "wb").write(response)
     
@@ -623,9 +635,9 @@ def runErrorMenu(errorText):
 #Main
 
 def main():
-    global currentMenu, alphabet, numbers
+    global alphabet, numbers
     
-    global currentProgressBar
+    global currentProgressBar, currentMenu
     
     alphabet = [i for i in range(65, 91)] + [i for i in range(97, 123)]
     numbers = [i for i in range(48, 58)]
