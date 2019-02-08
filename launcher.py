@@ -311,7 +311,7 @@ def downloadFiles(files):
     
     for index, file in enumerate(files):
         currentProgressBar.update("Downloading Required Files... (" + str(index) + " of " + str(len(files)) + ")", "Downloading " + file, index / len(files))
-        response = downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master" + file.replace("\\", "/"))
+        response = downloadFromUrl("https://raw.githubusercontent.com/Pipatooa/ppps/master/ppps" + file.replace("\\", "/"))
         
         if not os.path.exists(os.getcwd() + os.path.dirname(file)):
             os.makedirs(os.getcwd() + os.path.dirname(file))
