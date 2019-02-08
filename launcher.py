@@ -619,6 +619,9 @@ def main():
     alphabet = [i for i in range(65, 91)] + [i for i in range(97, 123)]
     numbers = [i for i in range(48, 58)]
     
+    if not os.path.exists(os.getcwd() + os.path.dirname(os.path.dirname(os.path.realpath(__file__)) + "\\ppps")):
+            os.makedirs(os.getcwd() + os.path.dirname(os.path.dirname(os.path.realpath(__file__)) + "\\ppps"))
+    
     os.chdir(os.path.dirname(os.path.realpath(__file__)) + "\\ppps")
     sys.path.append(os.getcwd() + "\\imports")
     
