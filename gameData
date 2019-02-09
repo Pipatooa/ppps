@@ -18,6 +18,6 @@
 		"gameDir": "pacman",
 		"description": "Creator: Cody Marsh\n\nHOW TO PLAY:\n    Use the arrow keys or WASD to move Pacman around the board. Collect pellets around the board to increase your score, and avoid the four ghosts which will follow you around the board.\n\n    Collecting power pellets will grant you extra points and allow you to consume ghosts, forcing them to respawn.",
 		"visibility": 2,
-        	"key": "EK82F3vykH"
+        "key": "EK82F3vykH"
 	}
 ]
