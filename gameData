@@ -1,23 +1,26 @@
 [
-	{
-		"name": "Snake",
-		"gameDir": "snake",
-		"description": "Creator: Bradley Hall\n\nHOW TO PLAY:\n    Use the arrow keys or WASD to move the snake around the board. Collect food to make your snake longer and gain points. Make sure not to run into the walls, or wrap around onto yourself.\n    \nORIGIN:\n    First published in 1997, it was programmed by Taneli Armanto of Nokia, inspired by the concept, Blockade, which was a similar arcade game made in 1976.",
-		"visibility": 2,
-		"key": "k3xUhmi7YP"
-	},
-	{
-		"name": "Minesweeper",
-		"gameDir": "minesweeper",
-		"description": "Creator: Bradley Hall\n\nHOW TO PLAY:\n    Use the arrow keys to move your cursor around the board.\n\n    Press \"Enter\" to reveal tiles on the board.\n\n    Numbers indicate the number of mines adjacent or diagonal to that square. If you hit a mine, you loose.\n\n    You can flag mines by pressing \"Space\".\n\n    Your goal is to reveal all safe tiles on the board and to flag all mines.",
+    {
+        "creator": "Bradley Hall",
+        "name": "Snake",
+        "gameDir": "snake",
+        "description": "HOW TO PLAY:\n    Use the arrow keys or WASD to move the snake around the board. Collect food to make your snake longer and gain points. Make sure not to run into the walls, or wrap around onto yourself.\n    \nORIGIN:\n    First published in 1997, it was programmed by Taneli Armanto of Nokia, inspired by the concept, Blockade, which was a similar arcade game made in 1976.",
+        "visibility": 2,
+        "key": "k3xUhmi7YP"
+    },
+    {
+        "creator": "Bradley Hall",
+        "name": "Minesweeper",
+        "gameDir": "minesweeper",
+        "description": "HOW TO PLAY:\n    Use the arrow keys to move your cursor around the board.\n\n    Press \"Enter\" to reveal tiles on the board.\n\n    Numbers indicate the number of mines adjacent or diagonal to that square. If you hit a mine, you loose.\n\n    You can flag mines by pressing \"Space\".\n\n    Your goal is to reveal all safe tiles on the board and to flag all mines.",
         "visibility": 2,
         "key": "V4sUYqXteP"
-	},
-	{
-		"name": "Pacman",
-		"gameDir": "pacman",
-		"description": "Creator: Cody Marsh\n\nHOW TO PLAY:\n    Use the arrow keys or WASD to move Pacman around the board. Collect pellets around the board to increase your score, and avoid the four ghosts which will follow you around the board.\n\n    Collecting power pellets will grant you extra points and allow you to consume ghosts, forcing them to respawn.",
-		"visibility": 2,
+    },
+    {
+        "creator": "Cody Marsh",
+        "name": "Pacman",
+        "gameDir": "pacman",
+        "description": "HOW TO PLAY:\n    Use the arrow keys or WASD to move Pacman around the board. Collect pellets around the board to increase your score, and avoid the four ghosts which will follow you around the board.\n\n    Collecting power pellets will grant you extra points and allow you to consume ghosts, forcing them to respawn.",
+        "visibility": 2,
         "key": "EK82F3vykH"
-	}
+    }
 ]
